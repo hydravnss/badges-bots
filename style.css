@@ -1,0 +1,122 @@
+/* Badges Bots — pastilles à côté du nom des personnages */
+
+.bb-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.bb-badge {
+    width: var(--bb-size, 18px);
+    height: var(--bb-size, 18px);
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: none;
+    border-radius: 3px;
+}
+
+#chat .mes .name_text + .bb-badges,
+.character_name_block > .ch_name + .bb-badges,
+.characterName + .bb-badges {
+    align-self: center;
+}
+
+.bb-hint {
+    opacity: 0.8;
+    font-size: 0.92em;
+    margin-bottom: 10px;
+}
+
+.bb-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.bb-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 12px;
+}
+
+.bb-card {
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.bb-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.bb-card-preview {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+    flex-shrink: 0;
+}
+
+.bb-card-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bb-card-remove {
+    flex-shrink: 0;
+}
+
+.bb-char-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 240px;
+    overflow: auto;
+    padding-right: 4px;
+}
+
+.bb-char {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    cursor: pointer;
+}
+
+.bb-char-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.bb-char-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bb-empty {
+    opacity: 0.7;
+    font-size: 0.92em;
+    margin: 6px 0;
+}

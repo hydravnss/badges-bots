@@ -219,7 +219,11 @@ function bindObserver() {
     if (observer) {
         return;
     }
-    observer = new MutationObserver(schedulePaint);
+    // Perf : ignorer les mutations internes au texte des messages (streaming).
+    observer = new MutationObserver((records) => {
+        if (records.every((r) => r.target instanceof Element && r.target.closest('.mes_text, .mes_reasoning, .bb-badges'))) return;
+        schedulePaint();
+    });
     const chat = document.getElementById('chat');
     const list = document.getElementById('rm_print_characters_block');
     const opts = { childList: true, subtree: true };
